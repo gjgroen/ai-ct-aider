@@ -16,6 +16,7 @@ const winningConditions = [
 const statusText = document.getElementById('statusText');
 const restartBtn = document.getElementById('restartBtn');
 const cells = document.querySelectorAll('.cell');
+const moveSound = document.getElementById('moveSound');
 
 statusText.textContent = `Speler ${currentPlayer} is aan de beurt`;
 
@@ -29,6 +30,7 @@ function handleCellClick(clickedCellEvent) {
 
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.textContent = currentPlayer;
+    moveSound.play();
 
     checkWin();
 }
